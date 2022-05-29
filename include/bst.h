@@ -3,12 +3,13 @@
 #define INCLUDE_BST_H_
 template <typename T>
 class BST {
-private:
+private: 
+    
     struct Node {
         T value;
         int count = 0;
-        Node* left = nullptr, * right =nullptr;
-    }; 
+        Node* left = nullptr, * right = nullptr;
+    };
     Node* root;
 
     Node* addNode(Node* root, const T& val) {
@@ -48,22 +49,21 @@ private:
         int rt = depth_p(root->right);
         if (lt > rt) {
             return lt + 1;
-        }
-        else {
+        } else {
             return rt + 1;
         }
     }
-
-public:
+public: 
+    
     BST() : root(nullptr) {}
     void add(const T& val) {
-        root = addNode(root, val); 
+        root = addNode(root, val);
     }
     int search(const T & val) {
-        return searchNode(root, val); 
+        return searchNode(root, val);
     }
-    int depth() { 
-        return depth_p(root); 
+    int depth() {
+        return depth_p(root);
     }
 };
 #endif  // INCLUDE_BST_H_
